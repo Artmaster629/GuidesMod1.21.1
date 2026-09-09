@@ -1,7 +1,9 @@
 package com.artmaster.guidesmod;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -52,6 +54,12 @@ public class ModMain {
         modEventBus.addListener(this::commonSetup);
 
 
+
+
+
+        ModItems.register(modEventBus);
+
+
         // Register the Deferred Register to the mod event bus so blocks get registered
         //BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
@@ -97,4 +105,9 @@ public class ModMain {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
+
+
+
+
 }

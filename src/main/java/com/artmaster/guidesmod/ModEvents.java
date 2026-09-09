@@ -4,6 +4,7 @@ package com.artmaster.guidesmod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,15 +14,26 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 @EventBusSubscriber(modid = ModMain.MODID)
 public class ModEvents {
 
+    @SubscribeEvent
+    public static void onTabsRegister(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.ENERGETIC_ITEM.get());
+            event.accept(ModItems.ENERGETIC_ITEM_EMPTY.get());
+        }
+    }
 
     @SubscribeEvent
     public static void onEvent(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
+
+
+
 
         if (player.getMainHandItem().getItem() == Items.AIR) {
             event.setCanceled(true);
