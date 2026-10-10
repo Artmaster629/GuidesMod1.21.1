@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.artmaster.guidesmod.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.guidesmod.refmap.json",
+  "mixins": [
+    "KineticBlockEntityMixin",
+    "TestMixin"
+  ]
+}

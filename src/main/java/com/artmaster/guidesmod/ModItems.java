@@ -1,6 +1,8 @@
 package com.artmaster.guidesmod;
 
 import com.artmaster.guidesmod.items.EnergeticItem;
+import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlock;
+import com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
